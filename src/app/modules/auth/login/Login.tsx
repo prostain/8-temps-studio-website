@@ -11,10 +11,6 @@ function Login() {
     const apiURL = 'https://temps-studio-api.herokuapp.com/api/login'
     let history = useHistory()
 
-    async function loginUser(credentials: Credentials) {
-
-    }
-
     const handleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault()
         const target = e.target as typeof e.target & {
