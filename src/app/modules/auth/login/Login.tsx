@@ -1,70 +1,83 @@
 import React, { useState } from 'react'
-import { Box, Button, Container, TextField, Typography } from '@mui/material'
+import { Button, Container, Typography } from '@mui/material'
+import { Formik, Field, Form } from "formik"
+import * as yup from "yup"
 import { useHistory } from 'react-router-dom'
+import { login } from '../../../services/auth'
+import InputField from '../../common/InputField'
 
-type Credentials = {
-    login: string,
-    password: string,
-}
-function Login() {
+const Login: React.FC = () => {
+    const initialValues: {
+        email: string;
+        password: string;
+    } = {
+        email: "",
+        password: "",
+    };
 
-    const apiURL = 'https://temps-studio-api.herokuapp.com/api/login'
+    const [message, setMessage] = useState("")
     let history = useHistory()
 
-    const handleSubmit = async (e: React.SyntheticEvent) => {
-        e.preventDefault()
-        const target = e.target as typeof e.target & {
-            email: { value: string };
-            password: { value: string };
-        };
-        const email = target.email.value;
-        const password = target.password.value;
-        const credentials = { email, password }
 
-        const response = await fetch(apiURL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
+    const validationSchema = yup.object().shape({
+        email: yup.string().required("Requis"),
+        password: yup.string().required("Requis"),
+    });
+
+    const handleLogin = (formValue: { email: string, password: string }) => {
+        const { email, password } = formValue;
+
+
+        setMessage('')
+
+        login(email, password).then(
+            () => {
+                history.push("/profile")
             },
-            body: JSON.stringify(credentials)
+            (error) => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
 
-        })
-            .then(data => data.json())
-            .then(data => {
-                if (data['accessToken']){
-                    localStorage.setItem('accessToken', data['accessToken'])
-                    localStorage.setItem('refreshToken', data['refreshToken'])
-                    localStorage.setItem('email',email)
-                    history.push("/profile")
-                }        
-            })
-
-
-
-
+                setMessage('Connexion échouée');
+            }
+        )
     }
+
     return (
         <div>
             <Container>
-                <Box
-                    component="form"
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '10px',
-                    }}
-                    onSubmit={handleSubmit}
-                >
+                <Typography variant='h2'>
+                    Connexion
+                </Typography>
 
-                    <Typography variant='h1'>
-                        Connexion
-                    </Typography>
-                    <TextField variant='outlined' required name='email' label='Adresse email' id="email" />
-                    <TextField variant='outlined' required name='password' label='Mot de passe' id='password' type='password' />
-                    <Button type='submit'>
-                        Connexion
-                    </Button>
-                </Box>
+                <Formik
+                    initialValues={initialValues}
+                    validationSchema={validationSchema}
+                    onSubmit={handleLogin}
+                >
+                    <Form>
+
+                        <Field fullWidth variant="outlined" name='email' type='email' autoComplete='username' as={InputField} label='E-mail*' />
+                        <Field fullWidth variant="outlined" name='password' type='password' autoComplete='new-password' as={InputField} label='Mot de passe*' />
+
+                        <Button type='submit'>
+                            Connexion
+                        </Button>
+                    </Form>
+
+                </Formik>
+
+                {message && (
+                    <div >
+                        <div >
+                            {message}
+                        </div>
+                    </div>
+                )}
             </Container>
 
         </div >
