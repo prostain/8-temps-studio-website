@@ -29,10 +29,6 @@ function LandingPage() {
                 </div>
 
                 <div>
-                    <a href='#'>Contact</a>
-                </div>
-
-                <div>
                     <a href='#'>Abonnements</a>
                 </div>
 
@@ -47,8 +43,6 @@ function LandingPage() {
                 <div className='sideNav'>
 
                     <i className="bi bi-person-fill"></i>
-
-                    <i className="bi-alarm"></i>
 
                     <i className="bi bi-search"></i>
 
