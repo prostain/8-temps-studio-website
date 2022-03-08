@@ -1,56 +1,106 @@
-import { Box } from '@mui/system'
 import React, { Component } from 'react'
+import { Button, Col, Container, Row } from 'react-bootstrap'
 
-export default class LandingPage extends Component {
-    render() {
-        return (
-            <>
-                <Box sx={{
-                    display: 'grid',
-                    gridTemplateColumns:'repeat(12,1fr)',
-                    gridTemplateRows:'1fr',
-                    gridColumnGap:'5px',
-                    gridRowGap:'5px',
 
-                }}>
 
-                    <Box>
-                        8 Temps Studio
-                    </Box>
+function LandingPage() {
+    return (
+        <>
+            <div className='landingPageNav'>
+                <div className='sideNav'>
+                    <img src={'./src/asset/Horizontal/8T-Black.png'} alt="" />
+                </div>
 
-                    <Box>
-                        Concept
-                    </Box>
+                <div>
+                    <a href="/home"> Accueil </a>
 
+                </div>
+
+                <div>
+                    <a href='#'>Concept</a>
+                </div>
+
+
+                <div>
+                    <a href='#'>Catégories</a>
+                </div>
+                <div>
+                    <a href='#'>Professeurs</a>
+                </div>
+
+                <div>
+                    <a href='#'>Contact</a>
+                </div>
+
+                <div>
+                    <a href='#'>Abonnements</a>
+                </div>
+
+                <div>
+                    <a href='#'>Blog</a>
+                </div>
+
+                <div>
+                    <a href='#'> Contacts</a>
+                </div>
+
+                <div className='sideNav'>
+
+                    <i className="bi bi-person-fill"></i>
+
+                    <i className="bi-alarm"></i>
+
+                    <i className="bi bi-search"></i>
+
+                </div>
+
+            </div>
+
+            <Container fluid>
+                <Row className='landingPageMainVideo'>
+                    <Col lg={12}>
+                        Video
+                    </Col>
+                </Row>
+                <Row className='landingPageMainText'>
+                    <p className='landingPageTitle'>
+                        Lorem Ipsum
+                    </p>
+                    <p className='landingPageSubtitle'>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, sit! Blanditiis est ipsam dolorem eum?
+                    </p>
+                </Row>
+                <Row>
+                    <Col lg={6} md={12} className='p-5 landingPageTheme'>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto animi distinctio? Eveniet numquam quae voluptas ab magni distinctio debitis perferendis voluptates temporibus officia, nemo ipsum, voluptate exercitationem dolorem repudiandae.</p>
+                        <button className='landingPageButton'>DECOUVRIR</button>
+
+                    </Col>
+                    <Col lg={6} md={12} className='landingPageVideo'> </Col>
+
+                    <Col lg={6} md={12} className='landingPageVideo'> </Col>
+                    <Col lg={6} md={12} className='p-5 landingPageTheme'>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto animi distinctio? Eveniet numquam quae voluptas ab magni distinctio debitis perferendis voluptates temporibus officia, nemo ipsum, voluptate exercitationem dolorem repudiandae.</p>
+                        <button className='landingPageButton'>DECOUVRIR</button>
+
+                    </Col>
+                    <Col lg={6} md={12} className='p-5 landingPageTheme'>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto animi distinctio? Eveniet numquam quae voluptas ab magni distinctio debitis perferendis voluptates temporibus officia, nemo ipsum, voluptate exercitationem dolorem repudiandae.</p>
+                        <button className='landingPageButton'>DECOUVRIR</button>
+
+                    </Col>
+                    <Col lg={6} md={12} className='landingPageVideo'> </Col>
                     
-                    <Box>
-                        Catégories
-                    </Box>
-                    <Box>
-                        Professeurs
-                    </Box>
-                    
-                    <Box>
-                        Contact
-                    </Box>
+                    <Col lg={6} md={12} className='landingPageVideo'> </Col>
+                    <Col lg={6} md={12} className='p-5 landingPageTheme'>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto animi distinctio? Eveniet numquam quae voluptas ab magni distinctio debitis perferendis voluptates temporibus officia, nemo ipsum, voluptate exercitationem dolorem repudiandae.</p>
+                        <button className='landingPageButton'>DECOUVRIR</button>
 
-                    <Box>
-                        Abonnements
-                    </Box>
-
-                    <Box>
-                        Blog
-                    </Box>
-
-                    <Box>
-                        Contacts
-                    </Box>
-
-                    <Box>
-                        Connexion + Recherche
-                    </Box>
-                </Box>
-            </>
-        )
-    }
+                    </Col>
+                </Row>
+            </Container>
+        </>
+    )
 }
+
+export default LandingPage

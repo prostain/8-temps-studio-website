@@ -2,6 +2,18 @@ import axios from "axios";
 
 const apiURL = 'https://temps-studio-api.herokuapp.com/api'
 
+export type registerData = {
+    firstname: string,
+    lastname: string,
+    email: string,
+    password: string,
+    passwordConfimation?: string,
+    address: string,
+    postalCode: string,
+    city: string,
+    country: string
+}
+
 export const login = async (email: string, password: string) => {
 
     const response = await axios.post(apiURL + "/login", {
@@ -15,8 +27,12 @@ export const login = async (email: string, password: string) => {
 
 }
 
-export const register = () => {
-    return 2
+export const register = async (registerData: registerData) => {
+    const response = await axios.post(apiURL + "/register", {...registerData})
+    if (response.data.accessToken) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+    }
+    return response.data
 }
 
 export const logout = () => {

@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import {defaultTheme} from './styles/defaultTheme'
 
 const theme = createTheme(defaultTheme)
+// import './styles/index.css'
 
 function App() {
   return (
