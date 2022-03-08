@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 
+import huitTempsLogoSm from '../../../asset/Horizontal/8T-White-sm.png'
 
 
 function LandingPage() {
@@ -8,7 +9,7 @@ function LandingPage() {
         <>
             <div className='landingPageNav'>
                 <div className='sideNav'>
-                    <img src={'./src/asset/Horizontal/8T-Black.png'} alt="" />
+                    <img className='imgScale' src={huitTempsLogoSm} alt="" />
                 </div>
 
                 <div>
@@ -42,7 +43,6 @@ function LandingPage() {
 
                 <div className='sideNav'>
 
-                    <i className="bi bi-person-fill"></i>
 
                     <i className="bi bi-search"></i>
 
@@ -84,7 +84,7 @@ function LandingPage() {
 
                     </Col>
                     <Col lg={6} md={12} className='landingPageVideo'> </Col>
-                    
+
                     <Col lg={6} md={12} className='landingPageVideo'> </Col>
                     <Col lg={6} md={12} className='p-5 landingPageTheme'>
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto animi distinctio? Eveniet numquam quae voluptas ab magni distinctio debitis perferendis voluptates temporibus officia, nemo ipsum, voluptate exercitationem dolorem repudiandae.</p>

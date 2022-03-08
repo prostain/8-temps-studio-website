@@ -57,22 +57,25 @@ code {
   flex-grow: 0; /* default 0 */
 }
 
-.bi {
-  /* color: white */
+.sideNav img{
+  max-width: 100%;
+  max-height: 100%;
 }
-
 div a {
   text-decoration: none;
   color: white;
 }
 
+.bi{
+  color:#68bb8c;
+}
 
 .landingPageButton{
   padding: 10px 30px 10px;
   text-align: center;
   background-color: #000;
   color:white;
-  border: 5px solid #FFFFFF;
+  border: 3px solid #FFFFFF;
   font-size: 20px;
 }
 
