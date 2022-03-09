@@ -1,27 +1,19 @@
-import { Box, Button, Container, Link, TextField, Typography } from '@mui/material'
-import React,{useState} from 'react'
-import { Formik, Field, Form } from "formik"
+import React, { useState } from 'react'
+import { Formik, Field, Form, ErrorMessage } from "formik"
 import * as yup from "yup"
 import { useHistory } from 'react-router-dom'
 import { register } from '../../../services/auth'
 import InputField from '../../common/InputField'
+import { registerData } from '../../../services/auth'
+import { Button, Col, Container, Row } from 'react-bootstrap'
 
-type registerValues = {
-    email: string,
-    password: string,
-    firstname: string,
-    lastname: string,
-    address: string,
-    postalCode: string,
-    city: string,
-    country: string,
-}
-
+import '../../../../styles/loginRegister.css'
 function Register() {
 
     const [message, setMessage] = useState("")
+    let history = useHistory();
 
-    const initialValues: registerValues = {
+    const initialValues: registerData = {
         email: '',
         password: '',
         firstname: '',
@@ -32,10 +24,10 @@ function Register() {
         country: '',
     }
 
-    const validationSchema = yup.object().shape( {
-        email: yup.string().required('requis'),
-        password: yup.string().required('requis').min(6, 'Votre mot de passe doit faire 6 caractères minimum'),
-        passwordConfirmation: yup.string().required().min(6, 'Votre mot de passe doit faire 6 caractères minimum'),
+    const validationSchema = yup.object().shape({
+        email: yup.string().required('Requis'),
+        password: yup.string().required('requis'),
+        passwordConfirmation: yup.string().required('requis'),
         firstname: yup.string().required('requis'),
         lastname: yup.string().required('requis'),
         address: yup.string().required('requis'),
@@ -44,39 +36,203 @@ function Register() {
         country: yup.string().required('requis'),
     })
 
-    const apiURL = 'https://temps-studio-api.herokuapp.com/api/login'
-
-    const handleLogin = (formValue: registerValues) => {
+    const handleRegistration = (formValue: registerData) => {
         setMessage('')
 
+        register(formValue).then(
+            () => history.push('/profile'),
+            (error) => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+
+                setMessage('Inscription échouée');
+            }
+        )
     }
 
     return (
-        <Container>
-            <Typography variant='h1'> Inscription </Typography>
+        <Container fluid className='loginRegister'>
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
-                onSubmit={handleLogin}
+                onSubmit={handleRegistration}
             >
                 <Form>
 
-                    <Field variant='outlined' required name='email' label='Adresse email' id="email" as={InputField} />
-                    <Field variant='outlined' required name='password' autoComplete='new-password' label='Mot de passe' id='password' type='password' as={InputField} />
-                    <Field variant='outlined' required name='passwordConfirmation'autoComplete='new-password'  label='Confirmez votre mot de passe' id='passwordConfirmation' type='password' as={InputField} />
-                    <Field variant='outlined' required name='firstname' label='Prénom' id='firstname' type='text' as={InputField} />
-                    <Field variant='outlined' required name='lastname' label='Nom' id='lastname' type='text' as={InputField} />
-                    <Field variant='outlined' required name='address' label='Adresse' id='address' type='text' as={InputField} />
-                    <Field variant='outlined' required name='postalCode' label='Code Postal' id='postalCode' type='text' as={InputField} />
-                    <Field variant='outlined' required name='city' label='Ville' id='city' type='text' as={InputField} />
-                    <Field variant='outlined' required name='country' label='Pays' id='country' type='text' as={InputField} />
+                    <Container>
+                        <Row>
+                            <i className="bi bi-arrow-left"></i>
+                        </Row>
+                        <Row>
+                            <h1 className='text-center text-uppercase lrTitle'> Inscrivez vous </h1>
+                        </Row>
+                        <Row>
 
-                    <Button type='submit'>
-                        Connexion
-                    </Button>
+                            <div className='form-group col-lg-6'>
+                                <label htmlFor='lastname'> Nom </label>
+                                <Field
+                                    name='lastname'
+                                    id='lastname'
+                                    type='text'
+                                    className='form-control' />
+                                <ErrorMessage
+                                    name="lastname"
+                                    component="div"
+                                    className="alert alert-danger"
+                                />
+                            </div>
+                            <div className="form-group col-lg-6">
+                                <label htmlFor='firstname'> Prénom </label>
+                                <Field
+                                    name='firstname'
+                                    id='firstname'
+                                    type='text'
+                                    className='form-control' />
+                                <ErrorMessage
+                                    name="firstname"
+                                    component="div"
+                                    className="alert alert-danger"
+                                />
+                            </div >
+                        </Row>
+                        <Row>
+                            <div className="form-group">
+                                <label htmlFor='email'> Email </label>
+                                <Field
+                                    name='email'
+                                    id='email'
+                                    type='email'
+                                    className='form-control' />
+                                <ErrorMessage
+                                    name="email"
+                                    component="div"
+                                    className="alert alert-danger"
+                                />
+                            </div >
+                        </Row>
+                        <Row>
+                            <div className="form-group">
+                                <label htmlFor='address'> Adresse </label>
+                                <Field
+                                    name='address'
+                                    id='address'
+                                    type='text'
+                                    className='form-control' />
+                                <ErrorMessage
+                                    name="address"
+                                    component="div"
+                                    className="alert alert-danger"
+                                />
+                            </div >
+
+                        </Row>
+                        <Row>
+                            <Col className="form-group col-lg-6">
+                                <label htmlFor='postalCode'> Code Postal </label>
+                                <Field
+                                    name='postalCode'
+                                    id='postalCode'
+                                    type='text'
+                                    className='form-control' />
+                                <ErrorMessage
+                                    name="postalCode"
+                                    component="div"
+                                    className="alert alert-danger"
+                                />
+
+                            </Col>
+                            <Col className="form-group col-lg-6">
+                                <label htmlFor='city'> Ville </label>
+                                <Field
+                                    name='city'
+                                    id='city'
+                                    type='text'
+                                    className='form-control' />
+                                <ErrorMessage
+                                    name="city"
+                                    component="div"
+                                    className="alert alert-danger"
+                                />
+
+                            </Col>
+
+                            <Col xs={12}>
+                                <label htmlFor='country'> Pays </label>
+                                <Field
+                                    name='country'
+                                    id='country'
+                                    type='text'
+                                    className='form-control' />
+                                <ErrorMessage
+                                    name="country"
+                                    component="div"
+                                    className="alert alert-danger"
+                                />
+                            </Col>
+                        </Row>
+
+                        <Row>
+                            <Col>
+                                <label htmlFor='password'> Mot de passe </label>
+                                <Field
+                                    name='password'
+                                    id='password'
+                                    type='password'
+                                    className='form-control' />
+                                <ErrorMessage
+                                    name="password"
+                                    component="div"
+                                    className="alert alert-danger"
+                                />
+                            </Col>
+                            <Col>
+                                <label htmlFor='passwordConfirmation'> Mot de passe </label>
+                                <Field
+                                    name='passwordConfirmation'
+                                    id='passwordConfirmation'
+                                    type='password'
+                                    className='form-control' />
+                                <ErrorMessage
+                                    name="passwordConfirmation"
+                                    component="div"
+                                    className="alert alert-danger"
+                                />
+
+                            </Col>
+
+                        </Row>
+
+                        <Row>
+                            <a href="#"> Mot de passe oublié ?</a>
+                        </Row>
+
+                        <Row>
+                            Deja un compte ? <a href="/register"> se connecter</a>
+                            <Button variant='light' type='submit'>
+                                Connexion
+                            </Button>
+                        </Row>
+
+                    </Container>
+
+
+
+
                 </Form>
 
             </Formik>
+
+            {message && (
+                <div >
+                    <div >
+                        {message}
+                    </div>
+                </div>
+            )}
         </Container>
     )
 }

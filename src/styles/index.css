@@ -5,9 +5,22 @@
   --palette-4: #48888f;
   --palette-5: #68bb8c;
 }
-* {
+
+@font-face {
+  font-family: "Foco Bold" ;
+  src: url('./../asset/font/foco-bold.ttf');
+}
+
+
+@font-face {
+  font-family: "SpaceMono Regular";
+  src: url('./../asset/font/SpaceMono-Regular.ttf');
+}
+
+.default{
   background-color: #000;
   color: #ddd;
+  font-family: Arial, 'Foco Bold';
 }
 body {
   margin: 0;
@@ -88,4 +101,8 @@ div a {
 .landingPageTheme{
   min-height: 50vh;
   /* padding: 50px; */
+}
+
+.btn8t {
+  text-align: start;
 }

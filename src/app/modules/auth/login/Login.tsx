@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
-import { Button, Container, Typography } from '@mui/material'
-import { Formik, Field, Form } from "formik"
+import { Formik, Field, Form, ErrorMessage } from "formik"
 import * as yup from "yup"
 import { useHistory } from 'react-router-dom'
 import { login } from '../../../services/auth'
 import InputField from '../../common/InputField'
 
+import '../../../../styles/loginRegister.css';
+import { Container, Button, Row, Col } from 'react-bootstrap'
+
+
 const Login: React.FC = () => {
+
     const initialValues: {
         email: string;
         password: string;
@@ -48,11 +52,17 @@ const Login: React.FC = () => {
     }
 
     return (
-        <div>
-            <Container>
-                <Typography variant='h2'>
-                    Connexion
-                </Typography>
+        <Container fluid className='loginRegister'>
+            <Row>
+                <i className="bi bi-arrow-left"></i>
+            </Row>
+            <Row>
+                <Col lg={4} offset-lg={4}>
+                    <h1 className='text-center text-uppercase lrTitle mx-auto'> Connectez vous à votre compte </h1>
+                </Col>
+            </Row>
+            <Row>
+
 
                 <Formik
                     initialValues={initialValues}
@@ -61,26 +71,45 @@ const Login: React.FC = () => {
                 >
                     <Form>
 
-                        <Field fullWidth variant="outlined" name='email' type='email' autoComplete='username' as={InputField} label='E-mail*' />
-                        <Field fullWidth variant="outlined" name='password' type='password' autoComplete='new-password' as={InputField} label='Mot de passe*' />
+                        <div className="form-group">
+                            <label htmlFor="email">Email *</label>
+                            <Field name="email" type="text" className="form-control" />
+                            <ErrorMessage
+                                name="email"
+                                component="div"
+                                className="alert alert-danger"
+                            />
+                        </div>
 
-                        <Button type='submit'>
+                        <div className="form-group">
+                            <label htmlFor="password">Mot de passe *</label>
+                            <Field name="password" type="password" className="form-control" />
+                            <ErrorMessage
+                                name="password"
+                                component="div"
+                                className="alert alert-danger"
+                            />
+                        </div>
+
+                        <Button variant='light' type='submit'>
                             Connexion
                         </Button>
                     </Form>
 
                 </Formik>
+            </Row>
 
-                {message && (
+
+
+            {message && (
+                <div >
                     <div >
-                        <div >
-                            {message}
-                        </div>
+                        {message}
                     </div>
-                )}
-            </Container>
+                </div>
+            )}
+        </Container>
 
-        </div >
     )
 }
 

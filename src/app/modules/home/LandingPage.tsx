@@ -1,56 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
+import LandingPageNav from '../common/LandingPageNav'
 
-import huitTempsLogoSm from '../../../asset/Horizontal/8T-White-sm.png'
 
 
 function LandingPage() {
     return (
         <>
-            <div className='landingPageNav'>
-                <div className='sideNav'>
-                    <img className='imgScale' src={huitTempsLogoSm} alt="" />
-                </div>
 
-                <div>
-                    <a href="/home"> Accueil </a>
-
-                </div>
-
-                <div>
-                    <a href='#'>Concept</a>
-                </div>
-
-
-                <div>
-                    <a href='#'>Catégories</a>
-                </div>
-                <div>
-                    <a href='#'>Professeurs</a>
-                </div>
-
-                <div>
-                    <a href='#'>Abonnements</a>
-                </div>
-
-                <div>
-                    <a href='#'>Blog</a>
-                </div>
-
-                <div>
-                    <a href='#'> Contacts</a>
-                </div>
-
-                <div className='sideNav'>
-
-
-                    <i className="bi bi-search"></i>
-
-                </div>
-
-            </div>
-
-            <Container fluid>
+            <Container fluid className='default'>
+            <LandingPageNav/>
                 <Row className='landingPageMainVideo'>
                     <Col lg={12}>
                         Video
