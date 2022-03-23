@@ -1,11 +1,19 @@
 import React from 'react'
 import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap'
-import { getCurrentUser } from '../../services/auth'
+import { getCurrentUser, logout } from '../../services/auth'
+import { useHistory } from "react-router-dom";
+
 
 
 import huitTempsLogoSm from '../../../asset/Horizontal/8T-White-sm.png'
 
 export default function LandingPageNav() {
+    const history = useHistory()
+    const logoutUser = () => {
+        logout();
+        history.push('/home');
+    }
+
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container fluid>
@@ -24,18 +32,26 @@ export default function LandingPageNav() {
 
                     </Nav>
                     <Nav>
-                            {!localStorage.getItem('user') ? (
-                                <Nav.Link  href='/login'>
-                                    <i className="bi bi-person-fill light"></i> S'inscrire
+                        {localStorage.getItem('user') ? (
+                            <>
+                                <Nav.Link href='/profile'>
+                                    <i className="bi bi-person-fill light"></i> Profil
                                 </Nav.Link>
-                            ) : (
-                                <Nav.Link  href='/profile'>
-                                    <i className="bi bi-person-fill light"></i> Profil 
+                                <Nav.Link>
+                                    <Button onClick={logout}>
+                                    Deconnexion
+                                    </Button>
                                 </Nav.Link>
-                            )}
-                              <Nav.Link href=''>
-                                <i className="bi bi-search"></i>
+                            </>
+                        ) : (
+                            <Nav.Link href='/login'>
+                                <i className="bi bi-person-fill light"></i> Se connecter
                             </Nav.Link>
+
+                        )}
+                        <Nav.Link href=''>
+                            <i className="bi bi-search"></i>
+                        </Nav.Link>
                     </Nav>
 
                 </Navbar.Collapse>
