@@ -1,15 +1,17 @@
-.loginRegister{
-    /* background: black; */
-    background-image: url('/src/asset/franciszek-augustyniak-82I3FAg4YtU-unsplash.jpg');
-    background-size: cover;
-    height: 100vh;
+.loginRegister {
+  /* background: black; */
+  background-image: url("/src/asset/franciszek-augustyniak-82I3FAg4YtU-unsplash-dark-mobile.jpg");
 
+  background-size: cover;
+  height: 100vh;
 }
 
 .lrTitle {
-    color: white;
+  color: white;
 }
 
-div a{
-
+@media screen and (min-width: 768px) {
+  .loginRegister {
+    background-image: url("/src/asset/franciszek-augustyniak-82I3FAg4YtU-unsplash-dark.jpg");
+  }
 }

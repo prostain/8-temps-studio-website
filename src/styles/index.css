@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 :root {
   --palette-1: #d53637;
   --palette-2: #b89c96;
@@ -7,24 +7,27 @@
   --palette-5: #68bb8c;
 }
 
-@font-face {
-  font-family: "Foco Bold" ;
-  src: url('./../asset/font/foco-bold.ttf');
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
 }
 
+@font-face {
+  font-family: "Foco Bold";
+  src: url("./../asset/font/foco-bold.ttf");
+}
 
 @font-face {
   font-family: "SpaceMono Regular";
-  src: url('./../asset/font/SpaceMono-Regular.ttf');
+  src: url("./../asset/font/SpaceMono-Regular.ttf");
 }
 
-.App{
+.App {
   background-color: #020202;
   color: #dedede;
   margin: 0;
-  font-family: "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,14 +51,14 @@ code {
   background-color: #aaa;
 }
 
-.landingPageMainText {
-  height: 20vh;
-}
+
 
 .landingPageTitle {
+  font-family: Roboto;
   text-align: center;
   font-size: 50px;
-  height: 50%;
+
+  color: var(--palette-2);
 }
 
 .landingPageSubtitle {
@@ -68,7 +71,7 @@ code {
   flex-grow: 0; /* default 0 */
 }
 
-.sideNav img{
+.sideNav img {
   max-width: 100%;
   max-height: 100%;
 }
@@ -77,31 +80,45 @@ div a {
   color: white;
 }
 
-hr{
+hr {
   border: 1px solid #dedede;
 }
-.bi{
-  color:#dedede;
+.bi {
+  color: #dedede;
 }
 
-.landingPageButton{
+.landingPageButton {
   padding: 10px 30px 10px;
   text-align: center;
   background-color: #000;
-  color:white;
-  border: 3px solid #FFFFFF;
+  color: white;
+  border: 3px solid #ffffff;
   font-size: 20px;
 }
 
-.landingPageVideo{
-  background-color:  #aaa;
+.landingPageVideo {
+  background-color: #aaa;
   min-height: 50vh;
+}
+
+.landingPageTheme {
+  min-height: 50vh;
+  font-size: 30px;
+
+  /* padding: 50px; */
+}
+
+.landingPageThemeTitle {
+  font-size: 30px;
+}
+
+.landingPageThemeText {
+  font-size: 15px;
 
 }
 
-.landingPageTheme{
-  min-height: 50vh;
-  /* padding: 50px; */
+.landingPageText {
+  font-size: 15px;
 }
 
 .btn8t {
@@ -112,7 +129,7 @@ iframe {
   pointer-events: none;
 }
 
-.btn8t{ 
+.btn8t {
   border: 2px solid var(--palette-2);
   color: white;
   background-color: #000;
@@ -120,7 +137,16 @@ iframe {
   padding: 0.5em 1em;
 }
 
-.headline{
+.headline {
   color: var(--palette-2);
   font-size: 20px;
+}
+
+.bottomFooter span a{
+  color: #666;
+  font-size: 12px;
+}
+
+.eightTNav {
+  background-color: #000;
 }

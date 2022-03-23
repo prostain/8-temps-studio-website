@@ -12,10 +12,12 @@ export default function LandingPageNav() {
     const logoutUser = () => {
         logout();
         history.push('/home');
+        history.go(0);
+
     }
 
     return (
-        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar className='eightTNav' variant="dark" expand="lg">
             <Container fluid>
                 <Navbar.Brand href="/home"> <img className='imgScale' src={huitTempsLogoSm} alt="" /> </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -35,7 +37,7 @@ export default function LandingPageNav() {
                         {localStorage.getItem('user') ? (
                             <>
                                 <Nav.Link href='/profile'>
-                                    <i className="bi bi-person-fill light"></i> Profil
+                                    <i className="bi bi-person-fill light"></i> 
                                 </Nav.Link>
                                 <Nav.Link>
                                     <Button onClick={logout}>
@@ -45,7 +47,7 @@ export default function LandingPageNav() {
                             </>
                         ) : (
                             <Nav.Link href='/login'>
-                                <i className="bi bi-person-fill light"></i> Se connecter
+                                <i className="bi bi-person-fill light"></i>
                             </Nav.Link>
 
                         )}
