@@ -36,6 +36,7 @@ const Login: React.FC = () => {
         login(email, password).then(
             () => {
                 history.push("/profile")
+                history.go(0)
             },
             (error) => {
                 const resMessage =
@@ -52,13 +53,9 @@ const Login: React.FC = () => {
 
     return (
         <Container fluid className='loginRegister '>
-            <Row>
-                <i className="bi bi-arrow-left"></i>
-            </Row>
-            <Row>
-                <Col lg={4} offset-lg={4}>
-                    <h1 className='text-center text-uppercase lrTitle mx-auto'> Connectez vous à votre compte </h1>
-                </Col>
+
+            <Row className='pt-5'>
+                <h1 className='text-center text-uppercase lrTitle mx-auto'> Connectez vous à votre compte </h1>
             </Row>
             <Row>
 
@@ -69,30 +66,35 @@ const Login: React.FC = () => {
                     onSubmit={handleLogin}
                 >
                     <Form>
+                        <Container>
 
-                        <div className="form-group">
-                            <label htmlFor="email">Email *</label>
-                            <Field name="email" type="text" className="form-control" />
-                            <ErrorMessage
-                                name="email"
-                                component="div"
-                                className="alert alert-danger"
-                            />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="email">Email *</label>
+                                <Field name="email" type="text" className="form-control" />
+                                <ErrorMessage
+                                    name="email"
+                                    component="div"
+                                    className="alert alert-danger"
+                                />
+                            </div>
 
-                        <div className="form-group">
-                            <label htmlFor="password">Mot de passe *</label>
-                            <Field name="password" type="password" className="form-control" />
-                            <ErrorMessage
-                                name="password"
-                                component="div"
-                                className="alert alert-danger"
-                            />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="password">Mot de passe *</label>
+                                <Field name="password" type="password" autocomplete='current-password' className="form-control" />
+                                <ErrorMessage
+                                    name="password"
+                                    component="div"
+                                    className="alert alert-danger"
+                                />
+                            </div>
 
-                        <Button variant='light' type='submit'>
-                            Connexion
-                        </Button>
+                            <div className=' col-xs-12 col-md-4 offset-md-4 d-grid pt-5'>
+                                <Button variant='light' type='submit'>
+                                    Connexion
+                                </Button>
+                            </div>
+                        </Container>
+
                     </Form>
 
                 </Formik>
@@ -101,8 +103,8 @@ const Login: React.FC = () => {
 
 
             {message && (
-                <div >
-                    <div >
+                <div className='d-grid pt-5' >
+                    <div className='text-center'>
                         {message}
                     </div>
                 </div>

@@ -55,6 +55,9 @@ function Register() {
 
     return (
         <Container fluid className='loginRegister'>
+            <Row className='pt-5'>
+                <h1 className='text-center text-uppercase lrTitle mx-auto'> Inscrivez vous </h1>
+            </Row>
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -62,10 +65,8 @@ function Register() {
             >
                 <Form>
 
-                    <Container className=''>
-                        <Row>
-                            <h1 className='text-center text-uppercase lrTitle'> Inscrivez vous </h1>
-                        </Row>
+                    <Container >
+
                         <Row>
 
                             <div className='form-group col-lg-6'>
@@ -202,16 +203,19 @@ function Register() {
 
                         </Row>
 
-                        <Row>
+                        <Row className='py-3'>
                             <a href="#"> Mot de passe oublié ?</a>
                         </Row>
 
                         <Row>
-                            <Col></Col>
-                            Deja un compte ? <a href="/register"> se connecter</a>
-                            <Button variant='light' type='submit'>
-                                Connexion
-                            </Button>
+                            <Col xs={12}>
+                                Deja un compte ? <a href="/register"> Se connecter</a>
+                            </Col>
+                            <Col xs={12} md={{ span: 4, offset: 4 }} className=' d-grid pt-5'>
+                                <Button variant='light' type='submit'>
+                                    Inscription
+                                </Button>
+                            </Col>
                         </Row>
 
                     </Container>
@@ -224,8 +228,8 @@ function Register() {
             </Formik>
 
             {message && (
-                <div >
-                    <div >
+                <div className='d-grid pt-5' >
+                    <div className='text-center'>
                         {message}
                     </div>
                 </div>
