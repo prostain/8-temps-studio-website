@@ -1,6 +1,5 @@
 .loginRegister{
     /* background: black; */
-    color: black;
     background-image: url('/src/asset/franciszek-augustyniak-82I3FAg4YtU-unsplash.jpg');
     background-size: cover;
     height: 100vh;
@@ -9,4 +8,8 @@
 
 .lrTitle {
     color: white;
+}
+
+div a{
+
 }

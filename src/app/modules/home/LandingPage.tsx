@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
-import LandingPageNav from '../common/LandingPageNav'
 
 
 
@@ -9,7 +8,6 @@ function LandingPage() {
         <>
 
             <Container fluid className='default'>
-            <LandingPageNav/>
                 <Row className='landingPageMainVideo'>
                     <Col lg={12}>
                         Video
