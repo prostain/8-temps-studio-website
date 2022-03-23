@@ -150,3 +150,16 @@ iframe {
 .eightTNav {
   background-color: #000;
 }
+
+.navbar-nav a{
+  margin-left: 1em;
+  margin-right: 1em;
+  font-size: 15px;
+}
+
+.teacherTitleCard{
+  top: 50%;
+  position: relative;
+  font-size: 60px;
+  font-weight: bolder;
+}
