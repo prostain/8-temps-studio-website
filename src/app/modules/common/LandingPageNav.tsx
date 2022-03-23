@@ -24,14 +24,18 @@ export default function LandingPageNav() {
 
                     </Nav>
                     <Nav>
-                        <Nav.Link>
-                            {localStorage.getItem('user') ? "Connecté" : "S'inscrire"}
-                            <i className="bi bi-person-fill light"></i>
-                            <i className="bi bi-search"></i>
-                            <svg className="bi" width="32" height="32" fill="currentColor">
-                                <use xlinkHref="bootstrap-icons.svg#heart-fill" />
-                            </svg>
-                        </Nav.Link>
+                            {!localStorage.getItem('user') ? (
+                                <Nav.Link  href='/login'>
+                                    <i className="bi bi-person-fill light"></i> S'inscrire
+                                </Nav.Link>
+                            ) : (
+                                <Nav.Link  href='/profile'>
+                                    <i className="bi bi-person-fill light"></i> Profil 
+                                </Nav.Link>
+                            )}
+                              <Nav.Link href=''>
+                                <i className="bi bi-search"></i>
+                            </Nav.Link>
                     </Nav>
 
                 </Navbar.Collapse>

@@ -3,7 +3,6 @@ import { Formik, Field, Form, ErrorMessage } from "formik"
 import * as yup from "yup"
 import { useHistory } from 'react-router-dom'
 import { register } from '../../../services/auth'
-import InputField from '../../common/InputField'
 import { registerData } from '../../../services/auth'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 
@@ -63,10 +62,7 @@ function Register() {
             >
                 <Form>
 
-                    <Container>
-                        <Row>
-                            <i className="bi bi-arrow-left"></i>
-                        </Row>
+                    <Container className=''>
                         <Row>
                             <h1 className='text-center text-uppercase lrTitle'> Inscrivez vous </h1>
                         </Row>
@@ -211,6 +207,7 @@ function Register() {
                         </Row>
 
                         <Row>
+                            <Col></Col>
                             Deja un compte ? <a href="/register"> se connecter</a>
                             <Button variant='light' type='submit'>
                                 Connexion

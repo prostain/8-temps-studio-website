@@ -3,7 +3,6 @@ import { Formik, Field, Form, ErrorMessage } from "formik"
 import * as yup from "yup"
 import { useHistory } from 'react-router-dom'
 import { login } from '../../../services/auth'
-import InputField from '../../common/InputField'
 
 import '../../../../styles/loginRegister.css';
 import { Container, Button, Row, Col } from 'react-bootstrap'
@@ -52,7 +51,7 @@ const Login: React.FC = () => {
     }
 
     return (
-        <Container fluid className='loginRegister'>
+        <Container fluid className='loginRegister '>
             <Row>
                 <i className="bi bi-arrow-left"></i>
             </Row>

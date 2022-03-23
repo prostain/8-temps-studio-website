@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Row, Stack } from 'react-bootstrap'
 import '../../../styles/footer.css'
 function Footer() {
     return (
-        <Container  className='mainFooter pt-5' >
+        <Container  className='mainFooter pt-5 ' >
             <Row>
                 <Col lg={4}>
                     <Stack gap={4}>

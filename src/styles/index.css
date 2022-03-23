@@ -107,3 +107,19 @@ hr{
 .btn8t {
   text-align: start;
 }
+
+iframe {
+  pointer-events: none;
+}
+
+.btn8t{ 
+  border: 2px solid var(--palette-2);
+  color: white;
+  background-color: #000;
+  border-radius: 6px;
+  padding: 0.5em 1em;
+}
+
+.btn8t a{
+  color : white
+}
