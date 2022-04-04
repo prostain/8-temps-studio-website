@@ -21,7 +21,7 @@ function Footer() {
                 </Col>
             </Row>
             <Row>
-                <Col className='footerBottom text-end' >
+                <Col className='footerBottom d-flex justify-content-end gap-3 text-end bottomFooter' >
                     <hr />
                     <span> <a href="#"> 8 Temps Studio</a></span>
                     <span> <a href="#"> Guides</a></span>

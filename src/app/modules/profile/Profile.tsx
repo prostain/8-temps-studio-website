@@ -11,21 +11,21 @@ function Profile() {
             <Container fluid>
                 <Row>
                     <Col xs={12} lg={{ span: 6, offset: 3 }}>
-                        <Card>
+                        <Card className='profileCard'>
                             <Row>
                                 <Col xs={4}>
                                     <img src="" alt="Profile picture" />
                                 </Col>
                                 <Col xs={8}>
-                                    <Row>
-                                        <p>PROFIL</p>
+                                    <Row className='pb-5 pt-1'>
+                                        <h2 className='headline'>PROFIL</h2>
                                     </Row>
                                     <Row>
-                                        Prenom Nom
+                                        <p> Prenom Nom </p>
                                     </Row>
 
                                     <Row>
-                                        Abonnement
+                                        <p>Abonnement</p>
                                     </Row>
 
                                     <Row>
@@ -37,26 +37,30 @@ function Profile() {
 
                         </Card>
                     </Col>
+
+                    <Col xs={12} lg={{ span: 6, offset: 3 }}>
+                        <Row className='gx-5 gy-4' >
+                            <Col xs={6} lg={6} className=' d-grid' >
+                                <Button href='/' className='btn8t'>Mon abonnement</Button>
+                            </Col>
+
+                            <Col xs={6} lg={6}  className=' d-grid'>
+                                <Button href='/' className='btn8t'>Paiments</Button>
+                            </Col>
+
+                            <Col xs={6} lg={6}  className=' d-grid'>
+                                <Button href='/' className='btn8t'>Mes données</Button>
+                            </Col>
+
+                            <Col xs={6} lg={6}  className=' d-grid'>
+                                <Button href='/' className='btn8t'>Chat {"&"} service</Button>
+                            </Col>
+
+                        </Row>
+
+                    </Col>
                 </Row>
 
-                <Row className="gap-3 px-5 py-3" >
-                    <Col xs={6} lg={ 6} classname='d-block'>
-                        <Button href='/' className='btn8t'>Mon abonnement</Button>
-                    </Col>
-
-                    <Col xs={6} lg={6}>
-                        <Button href='/' className='btn8t'>Paiments</Button>
-                    </Col>
-
-                    <Col xs={6} lg={6}>
-                        <Button href='/' className='btn8t'>Mes données</Button>
-                    </Col>
-
-                    <Col xs={6} lg={6}>
-                        <Button href='/' className='btn8t'>Chat {"&"} service</Button>
-                    </Col>
-
-                </Row>
 
             </Container>
 

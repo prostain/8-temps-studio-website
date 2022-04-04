@@ -4,6 +4,7 @@ import Login from '../modules/auth/login/Login';
 import Register from '../modules/auth/register/Register';
 import LandingPage from '../modules/home/LandingPage';
 import Profile from '../modules/profile/Profile';
+import Teachers from '../modules/teachers/pages/Teachers';
 import PrivateRoute from './PrivateRoute';
 
 export default class Router8T extends Component {
@@ -14,6 +15,7 @@ export default class Router8T extends Component {
                     <Route path='/home' component={LandingPage}/>
                     <Route path='/login' component={Login}/>
                     <Route path='/register' component={Register}/>
+                    <Route path='/teachers' component={Teachers}/>
                     <PrivateRoute exact path='/profile' component={Profile}/>
                 </Switch>
             </Router>
