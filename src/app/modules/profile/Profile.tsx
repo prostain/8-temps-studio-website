@@ -10,11 +10,11 @@ function Profile() {
         <>
             <Container fluid>
                 <Row>
-                    <Col xs={12} lg={{ span: 6, offset: 3 }}>
-                        <Card className='profileCard'>
+                    <Col xs={12} lg={{ span: 6, offset: 3 }} className='mb-3'>
+                        <Card className='profileCard '>
                             <Row>
                                 <Col xs={4}>
-                                    <img src="" alt="Profile picture" />
+                                    <img src="" alt="Profile" />
                                 </Col>
                                 <Col xs={8}>
                                     <Row className='pb-5 pt-1'>
@@ -41,19 +41,19 @@ function Profile() {
                     <Col xs={12} lg={{ span: 6, offset: 3 }}>
                         <Row className='gx-5 gy-4' >
                             <Col xs={6} lg={6} className=' d-grid' >
-                                <Button href='/' className='btn8t'>Mon abonnement</Button>
+                                <Button href='/' variant='primary' className='profileBtn'>Mon abonnement</Button>
                             </Col>
 
                             <Col xs={6} lg={6}  className=' d-grid'>
-                                <Button href='/' className='btn8t'>Paiments</Button>
+                                <Button href='/' className='profileBtn'>Paiments</Button>
                             </Col>
 
                             <Col xs={6} lg={6}  className=' d-grid'>
-                                <Button href='/' className='btn8t'>Mes données</Button>
+                                <Button href='/' className='profileBtn'>Mes données</Button>
                             </Col>
 
                             <Col xs={6} lg={6}  className=' d-grid'>
-                                <Button href='/' className='btn8t'>Chat {"&"} service</Button>
+                                <Button href='/' className='profileBtn'>Chat {"&"} service</Button>
                             </Col>
 
                         </Row>
@@ -61,7 +61,7 @@ function Profile() {
                     </Col>
                 </Row>
 
-
+            
             </Container>
 
         </>

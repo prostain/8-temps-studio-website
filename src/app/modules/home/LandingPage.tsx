@@ -13,41 +13,39 @@ function LandingPage() {
                         Video
                     </Col>
                 </Row>
-                <Row className='landingPageMainText'>
-                    <p className='landingPageTitle'>
-                        Lorem Ipsum
-                    </p>
-                    <p className='landingPageSubtitle'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, sit! Blanditiis est ipsam dolorem eum?
-                    </p>
+                <Row className='landingPageMainText '>
+                    <Col className='pt-2'>
+                        <div className='landingPageTitle text-center'>
+                            TES COURS DE DANSE
+                        </div>
+                        <div className='landingPageTitle text-center'>
+                            100% Digital
+                        </div>
+                        <p className='text-center'>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, sit! Blanditiis est ipsam dolorem eum?
+                        </p>
+                    </Col>
+
                 </Row>
                 <Row>
                     <Col lg={6} md={12} className='p-5 landingPageTheme'>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto animi distinctio? Eveniet numquam quae voluptas ab magni distinctio debitis perferendis voluptates temporibus officia, nemo ipsum, voluptate exercitationem dolorem repudiandae.</p>
-                        <button className='landingPageButton'>DECOUVRIR</button>
-
+                        <p className='landingPageThemeTitle'> COMTEMPORAIN</p>
+                        <p className='landingPageThemeText'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto animi distinctio? Eveniet numquam quae voluptas ab magni distinctio debitis perferendis voluptates temporibus officia, nemo ipsum, voluptate exercitationem dolorem repudiandae.</p>
+                        <Button className='landingPageButton'>DECOUVRIR</Button>
                     </Col>
                     <Col lg={6} md={12} className='landingPageVideo'> </Col>
+                </Row>
 
-                    <Col lg={6} md={12} className='landingPageVideo'> </Col>
-                    <Col lg={6} md={12} className='p-5 landingPageTheme'>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto animi distinctio? Eveniet numquam quae voluptas ab magni distinctio debitis perferendis voluptates temporibus officia, nemo ipsum, voluptate exercitationem dolorem repudiandae.</p>
-                        <button className='landingPageButton'>DECOUVRIR</button>
-
-                    </Col>
-                    <Col lg={6} md={12} className='p-5 landingPageTheme'>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto animi distinctio? Eveniet numquam quae voluptas ab magni distinctio debitis perferendis voluptates temporibus officia, nemo ipsum, voluptate exercitationem dolorem repudiandae.</p>
-                        <button className='landingPageButton'>DECOUVRIR</button>
+                <Row>
+                    <Col lg={{span:6, order:2}} md={{span :12, order:1}} className='p-5 landingPageTheme'>
+                        <p className='landingPageThemeTitle'> CLASSIQUE</p>
+                        <p className='landingPageThemeText'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto animi distinctio? Eveniet numquam quae voluptas ab magni distinctio debitis perferendis voluptates temporibus officia, nemo ipsum, voluptate exercitationem dolorem repudiandae.</p>
+                        <Button className='landingPageButton'>DECOUVRIR</Button>
 
                     </Col>
-                    <Col lg={6} md={12} className='landingPageVideo'> </Col>
+                    <Col lg={{span:6, order:1}} md={{span :12, order:2}} className='landingPageVideo'> </Col>
 
-                    <Col lg={6} md={12} className='landingPageVideo'> </Col>
-                    <Col lg={6} md={12} className='p-5 landingPageTheme'>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto animi distinctio? Eveniet numquam quae voluptas ab magni distinctio debitis perferendis voluptates temporibus officia, nemo ipsum, voluptate exercitationem dolorem repudiandae.</p>
-                        <button className='landingPageButton'>DECOUVRIR</button>
 
-                    </Col>
                 </Row>
             </Container>
         </>

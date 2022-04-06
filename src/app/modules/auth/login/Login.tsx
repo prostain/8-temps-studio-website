@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 import { login } from '../../../services/auth'
 
 import '../../../../styles/loginRegister.css';
-import { Container, Button, Row, Col } from 'react-bootstrap'
+import { Container, Button, Row } from 'react-bootstrap'
 
 
 const Login: React.FC = () => {
@@ -80,7 +80,7 @@ const Login: React.FC = () => {
 
                             <div className="form-group">
                                 <label htmlFor="password">Mot de passe *</label>
-                                <Field name="password" type="password" autocomplete='current-password' className="form-control" />
+                                <Field name="password" type="password" autoComplete='current-password' className="form-control" />
                                 <ErrorMessage
                                     name="password"
                                     component="div"

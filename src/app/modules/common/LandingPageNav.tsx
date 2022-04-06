@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Button, Container, Nav, Navbar } from 'react-bootstrap'
 import { getCurrentUser, logout } from '../../services/auth'
 import { useHistory } from "react-router-dom";
 
@@ -9,12 +9,6 @@ import huitTempsLogoSm from '../../../asset/Horizontal/8T-White-sm.png'
 
 export default function LandingPageNav() {
     const history = useHistory()
-    const logoutUser = () => {
-        logout();
-        history.push('/home');
-        history.go(0);
-
-    }
 
     return (
         <Navbar className='eightTNav' variant="dark" expand="lg">
@@ -26,11 +20,11 @@ export default function LandingPageNav() {
                     <Nav className="mx-auto">
                         <Nav.Link href="/home">Accueil</Nav.Link>
                         <Nav.Link href="/concept">Concept</Nav.Link>
-                        <Nav.Link href="/concept">Catégories</Nav.Link>
-                        <Nav.Link href="/concept">Professeurs</Nav.Link>
-                        <Nav.Link href="/concept">Abonnement</Nav.Link>
-                        <Nav.Link href="/concept">Contacts</Nav.Link>
-                        <Nav.Link href="/concept">Blog</Nav.Link>
+                        <Nav.Link href="/categories">Catégories</Nav.Link>
+                        <Nav.Link href="/teachers">Professeurs</Nav.Link>
+                        <Nav.Link href="/subscription">Abonnement</Nav.Link>
+                        <Nav.Link href="/contacts">Contacts</Nav.Link>
+                        <Nav.Link href="/blog">Blog</Nav.Link>
 
                     </Nav>
                     <Nav>
