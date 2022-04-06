@@ -8,9 +8,11 @@ function LandingPage() {
         <>
 
             <Container fluid className='default'>
-                <Row className='landingPageMainVideo'>
+                <Row >
                     <Col lg={12}>
-                        Video
+                        <div className='landingPageMainVideo' >
+                        <video src="http://temps-studio-api.herokuapp.com/assets/uploads/videos/ITWManon.mp4" autoPlay muted />
+                        </div>
                     </Col>
                 </Row>
                 <Row className='landingPageMainText '>

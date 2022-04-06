@@ -49,6 +49,13 @@ code {
 .landingPageMainVideo {
   height: 68vh;
   background-color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landingPageMainVideo video {
+  height: 63vh;
 }
 
 

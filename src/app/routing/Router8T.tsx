@@ -12,7 +12,7 @@ export default class Router8T extends Component {
         return (
             <Router>
                 <Switch>
-                    <Route path='/home' component={LandingPage}/>
+                    <Route path='/' component={LandingPage}/>
                     <Route path='/login' component={Login}/>
                     <Route path='/register' component={Register}/>
                     <Route path='/teachers' component={Teachers}/>
